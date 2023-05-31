@@ -2,8 +2,9 @@ import React from "react";
 import "./style.css";
 
 export const TitleSize = {
-  BIG: "big",
   SMALL: "small",
+  BIG: "big",  
+  MEDIUM: "medium",
   DEFAULT: "",
 };
 
