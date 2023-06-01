@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "../../ui/title/title";
-import FeatureCard from "../../ui/feature-card/feature-card";
-import Button from "../../ui/button/button";
+import Title from "/src/components/ui/title/title";
+import FeatureCard from "/src/components/blocks/feature-card/feature-card";
+import Button from "/src/components/ui/button/button";
 import "./style.css";
 
 function Features() {

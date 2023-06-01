@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "../../ui/logo/logo";
-import Title, { TitleSize } from "../../ui/title/title";
-import Nav from "../../layout/nav/nav";
+import Logo from "/src/components/ui/logo/logo";
+import Title, { TitleSize } from "/src/components/ui/title/title";
+import Nav from "/src/components/layout/nav/nav";
 import "./style.css";
 
 function Header() {
