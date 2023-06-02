@@ -1,59 +1,46 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path"); // Импортируем модуль "path" для работы с путями файлов
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: "./src/index.js", // Точка входа для сборки проекта
+
   output: {
-    publicPath: '/',
+    filename: "bundle.js", // Имя выходного файла сборки
+    path: path.resolve(__dirname, "public"), // Путь для выходного файла сборки
   },
-  entry: './src/index.js',
+
   module: {
     rules: [
       {
-        test: /\.cmp.svg$/,
-        use: ['@svgr/webpack'],
+        test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
+        use: ["style-loader", "css-loader"], // Загрузчики, используемые для обработки CSS-файлов
       },
+      { test: /\.svg$/, use: "svg-inline-loader" },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react',
-            ],
-          },
-        },
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /(.png|((?<!.cmp).svg)|.jpg|.gif|.woff|.woff2|.eot|.ttf|.otf)$/,
-        use: ['file-loader'],
+        use: ["babel-loader"],
       },
     ],
   },
+
   resolve: {
-    extensions: ['.jsx', '.js'],
-    alias: {
-      src: path.resolve(__dirname, 'src'),
-    }
+    extensions: ["*", ".js", ".jsx"],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
+      template: "./public/index.html",
     }),
   ],
-  devtool: 'inline-source-map',
+
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"), // Каталог для статики
     },
-    historyApiFallback: true,
-    open: true,
+    open: true, // Автоматически открывать браузер
     hot: true,
   },
+
+  mode: "development", // Режим сборки
 };
