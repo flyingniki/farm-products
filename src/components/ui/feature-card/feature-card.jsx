@@ -1,6 +1,5 @@
 import React from "react";
 import Title, { TitleSize } from "/src/components/ui/title/title";
-import CardImg from "/src/mocks/feature-cards";
 import "./style.css";
 
 function FeatureCard() {
