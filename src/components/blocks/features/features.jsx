@@ -1,15 +1,17 @@
 import React from "react";
-import Title from "/src/components/ui/title/title";
-import FeatureCard from "/src/components/blocks/feature-card/feature-card";
+import Title, { TitleSize } from "/src/components/ui/title/title";
+import FeatureCard from "/src/components/ui/feature-card/feature-card";
 import Button from "/src/components/ui/button/button";
 import "./style.css";
 
 function Features() {
   return (
-    <section className="feature-list">
-      <Title>Наши звёзды</Title>
-      <ul className="feature-list__list">
-        <li className="feature-list__item">
+    <section className="features">
+      <div className="features__title">
+        <Title size={TitleSize.MEDIUM}>Почему фермерские продукты лучше?</Title>
+      </div>
+      <ul className="features__list">
+        <li className="features__item">
           <FeatureCard />
         </li>
       </ul>

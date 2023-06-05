@@ -8,7 +8,6 @@ function Header() {
   return (
     <header className="header">
       <Logo />
-      <Title size={TitleSize.SMALL} />
       <Nav />
     </header>
   );

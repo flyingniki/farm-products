@@ -1,0 +1,40 @@
+.features {
+  padding: 100px 90px;
+}
+
+.features__title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.features__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 64px;
+}
+
+.features__item:nth-child(odd) {
+  background-color: #e1edce;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.features__item:nth-child(odd) .feature-card__category {
+  background-color: #88aa4d;
+}
+
+.features__item:nth-child(even) {
+  background-color: #f8ddd7;
+  margin-bottom: 20px;
+}
+
+.features__item:nth-child(even) .feature-card__category {
+  background-color: #f75531;
+}
+
+.features__item:last-child,
+.features__item:nth-last-child(2) {
+  margin-bottom: 0;
+}
