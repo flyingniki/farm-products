@@ -1,8 +1,8 @@
 import React from "react";
 import PageWrapper from "../layout/page-wrapper/page-wrapper";
-import cardList from "../../mocks/card-list";
+import features from "../../mocks/features";
 import "./style.css";
 
 export default function App() {
-  return <PageWrapper cards={cardList} />;
+  return <PageWrapper features={features} />;
 }

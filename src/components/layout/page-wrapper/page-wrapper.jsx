@@ -5,12 +5,12 @@ import MainPage from "../../pages/main-page/main-page";
 import "./style.css";
 
 // Обёртка для контента страниц
-function PageWrapper({ ...prop }) {
+function PageWrapper({ features }) {
   return (
     <>
       <Header />
       <main className="page-wrapper__main">
-        <MainPage {...prop} />
+        <MainPage features={features} />
       </main>
       <Footer />
     </>

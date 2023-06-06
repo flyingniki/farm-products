@@ -1,12 +1,12 @@
 import React from "react";
 import About from "../../blocks/about/about";
-import Features from "../../blocks/features/features";
+import FeaturesList from "../../blocks/features/features-list";
 
-function MainPage({ cards }) {
+function MainPage({ features }) {
   return (
     <>
       <About />
-      <Features cards={cards} />
+      <FeaturesList features={features} />
     </>
   );
 }
