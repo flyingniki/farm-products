@@ -1,5 +1,6 @@
 const path = require("path"); // Импортируем модуль "path" для работы с путями файлов
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js", // Точка входа для сборки проекта
@@ -34,6 +35,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/assets"),
+          to: path.resolve(__dirname, "dist/assets"),
+        },
+      ],
     }),
   ],
 
