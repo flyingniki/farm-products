@@ -1,7 +1,7 @@
 import React from "react";
-import Title, { TitleSize } from "/src/components/ui/title/title";
-import FeatureCard from "/src/components/ui/feature-card/feature-card";
-import Button from "/src/components/ui/button/button";
+import Title, { TitleSize } from "../../ui/title/title";
+import FeatureCard from "../../ui/feature-card/feature-card";
+import Button from "../../ui/button/button";
 import "./style.css";
 
 function Features({ cards }) {
@@ -18,7 +18,7 @@ function Features({ cards }) {
             {cards.map((card) => {
               <li className="features__item" key={card.id}>
                 <FeatureCard {...card} />
-              </li>;
+              </li>
             })}
           </ul>
           <Button minWidth={353}>Купить</Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import Title, { TitleSize } from "/src/components/ui/title/title";
+import Title, { TitleSize } from "../../ui/title/title";
 import "./style.css";
 
 function About() {

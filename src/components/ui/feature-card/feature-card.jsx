@@ -1,21 +1,18 @@
 import React from "react";
-import Title, { TitleSize } from "/src/components/ui/title/title";
+import Title, { TitleSize } from "../title/title";
 import "./style.css";
 
-function FeatureCard() {
+function FeatureCard({ card }) {
   return (
     <article className="feature-card">
       <div className="feature-card__title">
-        <img src="" alt="cultery" />
+        <img src="../../../assets/cultery.png" alt="cultery" />
         <div className="feature-card__description">
-          <p className="feature-card__category">Фермерские продукты</p>
-          <Title size={TitleSize.DEFAULT}>Еда намного вкуснее</Title>
+          <p className="feature-card__category">{card.category}</p>
+          <Title size={TitleSize.DEFAULT}>{card.title}</Title>
         </div>
       </div>
-      <p className="feature-card__text">
-        Домашняя колбаса из мяса, соли и специй и колбаса из магазина —
-        два настолько разных продукта, что они даже не родственники
-      </p>
+      <p className="feature-card__text">{card.text}</p>
     </article>
   );
 }
