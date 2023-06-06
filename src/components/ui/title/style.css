@@ -2,16 +2,21 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.title--medium {
   font-size: 36px;
-  line-height: 1.15;
+  line-height: 41px;
 }
 
-.title--big {
+.title_small {
+  line-height: 31px;
+  font-size: 24px;
+}
+
+.title_big {
+  line-height: 50px;
   font-size: 44px;
-  line-height: 1.15;
+}
+
+.title_extra_small {
+  font-size: 18px;
+  line-height: 27px;
 }

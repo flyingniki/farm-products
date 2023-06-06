@@ -1,30 +1,27 @@
 .footer {
+  display: flex;
+  padding-left: 90px;
+  padding-right: 90px;
+  box-sizing: border-box;
   position: absolute;
-  width: 1280px;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex;
+  width: 1280px;
+  margin: 0 auto;
   padding-top: 0;
   padding-bottom: 0;
-  height: 80px;
+  height: 79px;
   background-color: #ffffff;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  padding-left: 90px;
-  padding-right: 90px;
-  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer__copyright {
-  min-height: 43px;
   min-width: 148px;
-  max-width: 700px;
-  padding: 8px 12px;
   font-size: 18px;
-  border-radius: 5px;
   vertical-align: middle;
-  text-align: center;
-  box-sizing: border-box;
+  text-align: right;
 }
