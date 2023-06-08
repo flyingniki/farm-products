@@ -16,16 +16,12 @@ module.exports = {
         test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
         use: ["style-loader", "css-loader"], // Загрузчики, используемые для обработки CSS-файлов
       },
-      // {
-      //   test: /\.(png|jp(e*)g|svg|gif)$/,
-      //   type: "asset/resource",
-      // },
       {
-        test: /\.cmp.svg$/,
+        test: /\.svg$/,
         use: ["@svgr/webpack"],
       },
       {
-        test: /(.png|((?<!.cmp).svg)|.jpg|.gif|.woff|.woff2|.eot|.ttf|.otf)$/,
+        test: /.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"],
       },
       {
