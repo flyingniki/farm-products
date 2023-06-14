@@ -2,16 +2,17 @@ import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import MainPage from "../../pages/main-page/main-page";
-import "./style.css";
+import Order from "../../pages/order/order";
+import { Main } from "./style";
 
 // Обёртка для контента страниц
-function PageWrapper({ features }) {
+function PageWrapper({ products }) {
   return (
     <>
       <Header />
-      <main className="page-wrapper__main">
-        <MainPage features={features} />
-      </main>
+      <Main>
+        <Order products={products} />
+      </Main>
       <Footer />
     </>
   );
