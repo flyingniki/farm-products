@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { P, Section } from "../../../components/styled/index";
+import { P, Section } from "../../../components/styled";
 import aboutImage from "../../../assets/about.svg";
 
 export const StyledAbout = styled(Section)`

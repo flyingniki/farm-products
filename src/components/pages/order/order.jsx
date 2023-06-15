@@ -2,16 +2,22 @@ import React from "react";
 import Panel from "../../ui/panel/panel";
 import Title, { TitleSize } from "../../ui/title/title";
 import Button from "../../ui/button/button";
+import ProductCart from "../../ui/product-cart/product-cart";
 import {
   LeftColumn,
   StyledOrder,
   AddressInput,
   PriceLabel,
   PriceValue,
+  ProductSwiper,
 } from "./style";
+import { SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+import "swiper/swiper-bundle.min.css";
+SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 // Оформление заказа
-function Order() {
+function Order({ products }) {
   return (
     <StyledOrder as="form">
       <LeftColumn>
@@ -31,7 +37,22 @@ function Order() {
           <Button maxWidth>Купить</Button>
         </Panel>
       </LeftColumn>
-      <div>Сюда нужно добавить слайдер с продуктами</div>
+      <ProductSwiper
+        spaceBetween={12}
+        direction="vertical"
+        slidesPerView="auto"
+        scrollbar={{ draggable: true }}
+        mousewheel
+        pagination={{
+          type: "fraction",
+        }}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <ProductCart product={product} />
+          </SwiperSlide>
+        ))}
+      </ProductSwiper>
     </StyledOrder>
   );
 }
