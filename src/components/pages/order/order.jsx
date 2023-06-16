@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Panel from "../../ui/panel/panel";
 import Title, { TitleSize } from "../../ui/title/title";
 import Button from "../../ui/button/button";
 import ProductCart from "../../ui/product-cart/product-cart";
+import CheckboxList from "../../ui/checkbox-list/checkbox-list";
 import {
   LeftColumn,
   StyledOrder,
@@ -10,6 +11,7 @@ import {
   PriceLabel,
   PriceValue,
   ProductSwiper,
+  CheckboxLabel,
 } from "./style";
 import { SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
@@ -18,6 +20,8 @@ SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 // Оформление заказа
 function Order({ products }) {
+  const [selectProductIds, setSelectProductIds] = useState([]);
+
   return (
     <StyledOrder as="form">
       <LeftColumn>
@@ -25,7 +29,17 @@ function Order({ products }) {
           <Title as="h2" size={TitleSize.EXTRA_SMALL} marginBottom={12}>
             Выберите продукты
           </Title>
-          Чекбокс со списком продуктов
+          <CheckboxList
+            labelComponent={CheckboxLabel}
+            name={"select-products"}
+            isGridList={false}
+            options={products.map((product) => ({
+              value: product.id,
+              title: product.name,
+            }))}
+            selectValues={selectProductIds}
+            onChange={setSelectProductIds}
+          />
         </Panel>
         <Panel>
           <Title size={TitleSize.EXTRA_SMALL} marginBottom={24}>
