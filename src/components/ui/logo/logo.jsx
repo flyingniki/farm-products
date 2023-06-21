@@ -1,12 +1,21 @@
 import React from "react";
-import { ReactComponent as LogoImg } from "../../../assets/logo.svg";
-import { Text, StyledLogo } from "./style";
+import { ReactComponent } from "../../../assets/logo.svg";
+import { Text, StyledLogo, StyledLogoMainPage } from "./style";
+import { AppRoute } from "../../../const";
+import { useLocation } from "react-router-dom";
 
 // Логотип сайта с названием
 function Logo() {
-  return (
-    <StyledLogo href="/">
-      <LogoImg />
+  const { pathname } = useLocation();
+
+  return pathname === AppRoute.MAIN ? (
+    <StyledLogoMainPage>
+      <ReactComponent />
+      <Text>Фермерские продукты</Text>
+    </StyledLogoMainPage>
+  ) : (
+    <StyledLogo to={AppRoute.MAIN}>
+      <ReactComponent />
       <Text>Фермерские продукты</Text>
     </StyledLogo>
   );

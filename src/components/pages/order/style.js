@@ -1,7 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Section, Label } from "../../../components/styled/";
 import TextInput from "../../ui/text-input/text-input";
 import { Swiper } from "swiper/react";
+import checkboxSelect from "../../../assets/checkbox.svg";
+import Price from "../../../components/ui/price/price";
 
 const leftWidth = "353px";
 
@@ -32,10 +34,7 @@ export const PriceLabel = styled(Label)`
   margin-bottom: 6px;
 `;
 
-export const PriceValue = styled.span`
-  display: block;
-  font-size: 24px;
-  font-weight: bold;
+export const PriceValue = styled(Price)`
   margin-bottom: 30px;
 `;
 

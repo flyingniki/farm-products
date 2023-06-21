@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import Order from "../../pages/order/order";
+import { Outlet } from "react-router-dom";
 import { Main } from "./style";
 
 // Обёртка для контента страниц
@@ -10,7 +10,7 @@ function PageWrapper({ products }) {
     <>
       <Header />
       <Main>
-        <Order products={products} />
+        <Outlet />
       </Main>
       <Footer />
     </>

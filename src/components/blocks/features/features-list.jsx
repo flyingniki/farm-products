@@ -1,22 +1,25 @@
 import React from "react";
-import Title, { TitleSize } from "../../ui/title/title";
 import FeatureCard from "../../ui/feature-card/feature-card";
-import Button from "../../ui/button/button";
-import "./style.css";
+import { Ul, Li } from "../../styled";
+import { Features, StyledButton, StyledTitle } from "./style";
+import { AppRoute } from "../../../const";
 
-function FeaturesList({ features }) {
+// список преимуществ
+function FeaturesList({
+  features, // преимущества - массив объектов с id, title, owner, isNegative, image, about
+}) {
   return features && features.length ? (
-    <section className="features">
-      <Title size={TitleSize.MEDIUM}>Почему фермерские продукты лучше?</Title>
-      <ul className="features__list">
+    <Features>
+      <StyledTitle as="h2">Почему фермерские продукты лучше?</StyledTitle>
+      <Ul $isGridList>
         {features.map((feature) => (
-          <li className="features__item" key={feature.id}>
+          <Li key={feature.id}>
             <FeatureCard {...feature} />
-          </li>
+          </Li>
         ))}
-      </ul>
-      <Button>Купить</Button>
-    </section>
+      </Ul>
+      <StyledButton link={AppRoute.ORDER}>Купить</StyledButton>
+    </Features>
   ) : null;
 }
 
